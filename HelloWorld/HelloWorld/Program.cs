@@ -39,6 +39,74 @@ namespace Demo
             double f = ((9 * c) / 5) + 32;
             Console.WriteLine("Tempertaure in F is:"+f);
         }
+        public void Condition(int a, int b, int c)
+        {
+            int m = a;
+            if (m < b)
+            {
+                m = b;
+            }
+            if(m <c)
+            {
+                m = c;
+            }
+            Console.WriteLine("The output is: "+m);
+
+        }
+        public void Loop(int n)
+        {
+            int i = 0;
+            while (i <= n)
+            {
+                Console.WriteLine("The number is: "+i);
+                i++;
+            }
+        }
+        public void Factorial(int f)
+        {
+            for (int i = 1; i <= f; i++)
+            {
+                if (f % i == 0)
+                {
+                    Console.WriteLine("The factorial is: " + i);
+                }
+            }
+        }
+        public void Check(int bo)
+        {
+            bool flag = false;
+            for (int i=2;i<bo;i++)
+            {
+                if(bo % i == 0)
+                {
+                    flag = true;
+                }
+            }
+            if (flag == false)
+            {
+                Console.WriteLine("The number is prime");
+            }
+            else
+            {
+                Console.WriteLine("The number is not prime");
+            }
+        }
+        public void Show()
+        {
+            int[] ar = new int[] {10,20,30,40,50};
+            for(int i = 0; i < ar.Length; i++)
+            {
+                Console.WriteLine(ar[i]+" ");
+            }
+            Console.WriteLine();
+
+            string[] ar1 = new string[] { "Shinorina", "Shahrin", "Shaon", "Ishabela" };
+            foreach(string s in ar1)
+            {
+                Console.WriteLine(s);
+            }
+        }
+
         static void Main(string[] args)
         {
             Data obj = new Data();
@@ -69,6 +137,30 @@ namespace Demo
             Console.WriteLine("Enter C:");
             c = Convert.ToDouble(Console.ReadLine());
             obj1.Temperature(c);
+
+            int x,y,z;
+            Console.WriteLine("Enter 3 number.");
+            x = Convert.ToInt32(Console.ReadLine());
+            y = Convert.ToInt32(Console.ReadLine());
+            z = Convert.ToInt32(Console.ReadLine());
+            obj1.Condition(x,y,z);
+
+            int n;
+            Console.WriteLine("Enter number: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            obj1.Loop(n);
+
+            int f;
+            Console.WriteLine("Enter the number for factorial: ");
+            f = Convert.ToInt32(Console.ReadLine());
+            obj1.Factorial(f);
+
+            int bo;
+            Console.WriteLine("Enter the boolen value: ");
+            bo = Convert.ToInt32(Console.ReadLine());
+            obj1.Check(bo);
+
+            obj1.Show();
                 
         }
     }
